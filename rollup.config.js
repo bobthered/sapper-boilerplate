@@ -1,4 +1,5 @@
 // libraries
+import alias from '@rollup/plugin-alias';
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import config from 'sapper/config/rollup.js';
@@ -20,6 +21,16 @@ const onwarn = (warning, onwarn) =>
   (warning.code === 'CIRCULAR_DEPENDENCY' &&
     /[/\\]@sapper[/\\]/.test(warning.message)) ||
   onwarn(warning);
+
+const aliases = {
+  resolve: ['.svelte'],
+  entries: [
+    {
+      find: '@components',
+      replacement: path.resolve(__dirname, 'src/components'),
+    },
+  ],
+};
 
 export default {
   client: {
@@ -72,6 +83,7 @@ export default {
             ],
           ],
         }),
+      alias(aliases),
 
       !dev &&
         terser({
@@ -112,6 +124,7 @@ export default {
       }),
       commonjs(),
       json(),
+      alias(aliases),
     ],
     external: Object.keys(pkg.dependencies).concat(
       require('module').builtinModules
