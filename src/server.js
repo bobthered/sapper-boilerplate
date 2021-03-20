@@ -1,11 +1,16 @@
 // libraries
 import compression from 'compression';
+import _ from 'dotenv/config';
 import express from 'express';
+import mongoose from './mongoose';
 import * as sapper from '@sapper/server';
 import sirv from 'sirv';
 
 // initiate express app;
 const app = express();
+
+// initiate mongoose
+mongoose.init();
 
 // env variables
 const { NODE_ENV, PORT } = process.env;
