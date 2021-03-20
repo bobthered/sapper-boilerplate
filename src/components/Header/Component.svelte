@@ -1,0 +1,39 @@
+<script>
+  // components
+  import Button from '@bobthered/svelte-button';
+  import { Moon, Sun } from '@bobthered/svelte-heroicons/medium';
+  import Logo from '@components/Logo.svelte';
+  import Nav from '@components/Nav.svelte';
+
+  // handlers
+  const toggleDarkMode = e => {
+    e.preventDefault();
+    $darkmode = !$darkmode;
+  }
+
+  // props
+  export let segment;
+
+  // store
+  import { store as darkmode } from '@components/Darkmode';
+  import { default as header } from './store';
+</script>
+
+<!-- svelte-ignore component-name-lowercase -->
+<header
+  class="{Object.values($header.classes).join(' ')}"
+  bind:clientHeight={$header.height}>
+  <div class="container px-4 flex justify-between">
+    <a
+      href="./"
+      class="flex space-x-2 items-center py-4 transition duration-200 hover:text-primary-500">
+      <Logo class="w-12 h-12 md:w-16 md:h-16" />
+    </a>
+    <div class="flex items-center">
+      <Nav {segment} />
+      <Button bg="bg-primary-500 hover:bg-transparent" class="hover:ring-2 ring-inset" padding="py-4 px-8" rounded="rounded-full" on:click={toggleDarkMode}>
+        <svelte:component this={$darkmode ? Moon : Sun} class='w-6 h-6' />
+      </Button>
+    </div>
+  </div>
+</header>

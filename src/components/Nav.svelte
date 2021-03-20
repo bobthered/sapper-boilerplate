@@ -19,19 +19,19 @@
 <nav class="flex">
   <div class="absolute top-0 right-0 h-full w-14 z-30 md:hidden">
     <a
-		href="./menu"
-		on:click|preventDefault={menuClickHandler}
-		class="absolute transition duration-200 top-0 left-0 py-7 px-4 w-14 {!show ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}">
-		<Menu />
-	</a>
-    <a
-		href="./close"
-		on:click|preventDefault={menuClickHandler}
-		class="absolute transition duration-200 top-0 left-0 py-7 px-4 w-14 {show ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}">
-		<X />
-	</a>
-</div>
-	<div class="fixed flex flex-col p-4 w-screen h-screen top-0 left-0 transition duration-200 z-10 {show ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'} bg-white md:relative md:flex-row md:w-auto md:h-auto md:opacity-100 md:pointer-events-auto">
+			href="./menu"
+			on:click|preventDefault={menuClickHandler}
+			class="absolute transition duration-200 top-0 left-0 py-7 px-4 w-14 {!show ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}">
+			<Menu />
+		</a>
+		<a
+			href="./close"
+			on:click|preventDefault={menuClickHandler}
+			class="absolute transition duration-200 top-0 left-0 py-7 px-4 w-14 {show ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}">
+			<X />
+		</a>
+	</div>
+	<div class="fixed flex flex-col p-4 w-screen h-screen top-0 left-0 transition duration-200 z-10 bg-white {show ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'} md:bg-transparent md:relative md:flex-row md:w-auto md:h-auto md:opacity-100 md:pointer-events-auto">
 		{#each items as { text, href, ...item }}
 			<a
 				{href}

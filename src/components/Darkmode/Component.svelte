@@ -2,7 +2,7 @@
   // stores
   import store from './store';
   
-  $: classes = store ? 'dark' : '';
+  $: classes = $store ? 'dark' : '';
 </script>
 
 <div class={classes}>

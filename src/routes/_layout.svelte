@@ -1,15 +1,16 @@
 <script>
 	// components
-	import Header from '@components/Header.svelte';
+	import { Component as Darkmode } from '@components/Darkmode';
+	import { Component as Header } from '@components/Header';
+	import { Component as Main } from '@components/Main';
 
 	// props
 	export let segment;
-
-	// stores
-	import { header as height} from '@stores';
 </script>
 
-<main style="padding-top:{$height}px">
-	<Header {segment} />
-	<slot />
-</main>
+<Darkmode>
+	<Main>
+		<Header {segment} />
+		<slot />
+	</Main>
+</Darkmode>

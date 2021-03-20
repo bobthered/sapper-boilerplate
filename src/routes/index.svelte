@@ -1,5 +1,11 @@
+<script>
+	// components
+	import Landing01 from './templates/Landing01.svelte';
+</script>
+
 <svelte:head>
 	<title>Sapper project template</title>
 </svelte:head>
 
-<h1>Great success!</h1>
+<Landing01 />
+<Landing01 />
