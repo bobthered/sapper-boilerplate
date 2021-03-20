@@ -1,3 +1,6 @@
+// imports
+const config = require('./site.config.js');
+
 // libraries
 const palette = require('@bobthered/tailwindcss-palette-generator');
 
@@ -7,7 +10,7 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
-      colors: palette('#0099ff'),
+      colors: palette(config.theme.color.primary),
     },
   },
 };
