@@ -6,6 +6,9 @@
   // props
   export let segment;
 
+  // store
+  import height from './Header.store.js';
+
   // style
   export let bg = 'bg-white';
   export let display = 'flex';
@@ -27,7 +30,8 @@
 </script>
 
 <header
-  class={Object.values(classes).join(' ')}>
+  class={Object.values(classes).join(' ')}
+  bind:clientHeight={$height}>
   <div class="container px-4 flex justify-between">
     <a
       href="./"
