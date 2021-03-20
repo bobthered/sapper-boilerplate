@@ -1,16 +1,17 @@
 <script>
   // components
   import Logo from '@components/Logo.svelte';
+  import Nav from '@components/Nav.svelte';
 
   // props
-  // export let segment;
+  export let segment;
 
   // style
   export let bg = 'bg-white';
   export let display = 'flex';
   export let justify = 'justify-center';
   export let position = 'fixed top-0 left-0';
-  export let shadow = 'shadow-header';
+  export let shadow = 'shadow';
   export let width = 'w-full';
   export let z = 'z-20';
 
@@ -33,8 +34,8 @@
       class="flex space-x-2 items-center py-4 transition duration-200 hover:text-primary-500">
       <Logo class="w-12 h-12 md:w-16 md:h-16" />
     </a>
-    <!-- <div class="flex items-stretch">
+    <div class="flex items-stretch">
       <Nav {segment} />
-    </div> -->
+    </div>
   </div>
 </header>
