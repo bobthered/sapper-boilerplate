@@ -1,15 +1,15 @@
 <script>
 	// components
-	import Header from '@components/Header/Header.svelte';
+	import Header from '@components/Header.svelte';
 
 	// props
 	export let segment;
 
 	// stores
-	import headerHeight from '@components/Header/Header.store.js';
+	import { header as height} from '@stores';
 </script>
 
-<main style="padding-top:{$headerHeight}px">
+<main style="padding-top:{$height}px">
 	<Header {segment} />
 	<slot />
 </main>

@@ -7,7 +7,7 @@
   export let segment;
 
   // store
-  import height from './Header.store.js';
+  import { header as height } from '@stores';
 
   // style
   export let bg = 'bg-white';
