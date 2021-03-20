@@ -1,6 +1,7 @@
 <script>
   // components
   import Button from '@bobthered/svelte-button';
+  import {ArrowDown } from '@bobthered/svelte-heroicons/medium';
 
   // stores
   import { store as header } from '@components/Header'
@@ -15,9 +16,16 @@
   $: $header.classes = $main.y === 0 ? headerInitClasses : headerScrollClasses;
 
   $main.addTopPadding = false;
+
+  let height = 0;
+
+  const scrollDown = e => {
+    e.preventDefault();
+    window.scrollTo(0, height);
+  }
 </script>
 
-<div class="flex h-screen w-screen justify-center items-center relative">
+<div bind:clientHeight={height} class="flex h-screen w-screen justify-center items-center relative">
   <div class="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 w-1/2 md:w-1/4">
     <svg class="w-full text-primary-500 opacity-10" viewBox="0 0 409 687" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path opacity="0.91" d="M275.117 174.125C-60.0647 -119.596 -178.262 45.4697 -186.528 58.0501C-186.874 58.577 -186.997 59.1239 -186.991 59.7543L-183.061 482.638C-181.901 607.457 -81.271 709.781 40.5524 682.575C179.056 651.644 341.425 580.378 397.401 416.846C451.187 259.713 301.966 197.652 275.117 174.125Z" fill="currentColor"/>
@@ -205,5 +213,8 @@
         <path d="M430.999 399.366C430.446 399.366 429.998 399.807 429.998 400.351V400.552C429.998 401.096 430.446 401.537 430.999 401.537C431.552 401.537 432 401.096 432 400.552V400.351C432 399.807 431.552 399.366 430.999 399.366Z" fill="#56CCF2"/>
         </svg>        
     </div>
+  </div>
+  <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+    <Button bg="bg-transparent" class="ring-2 ring-inset transform translate-y-2 hover:-translate-y-1" padding="p-4" rounded="rounded-full" textColor="text-primary-500" on:click={scrollDown}><ArrowDown class="w-6 h-6" /></Button>
   </div>
 </div>
