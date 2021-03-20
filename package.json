@@ -1,6 +1,6 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "sapper-boilerplate",
+  "description": "sapper-boilerplate",
   "version": "0.0.1",
   "scripts": {
     "build": "npm run tw:build && npm run sapper:build",
@@ -9,8 +9,8 @@
     "sapper:build": "sapper build",
     "sapper:dev": "sapper dev",
     "start": "node __sapper__/build",
-    "tw:build": "postcss src/tailwind/tailwind.css -o public/css/tailwind.css",
-    "tw:dev": "postcss src/tailwind/tailwind.css -o public/css/tailwind.css -w --verbose"
+    "tw:build": "postcss src/css/tailwind.css -o public/css/tailwind.css",
+    "tw:dev": "postcss src/css/tailwind.css -o public/css/tailwind.css -w --verbose"
   },
   "dependencies": {
     "compression": "^1.7.1"
@@ -39,6 +39,7 @@
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.0",
     "sapper": "^0.28.0",
+    "sirv": "^1.0.11",
     "svelte": "^3.17.3",
     "tailwindcss": "^2.0.4"
   }
