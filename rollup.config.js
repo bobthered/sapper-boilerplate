@@ -30,8 +30,16 @@ const aliases = {
       replacement: path.resolve(__dirname, 'src/components'),
     },
     {
-      find: '@stores',
-      replacement: path.resolve(__dirname, 'src/stores'),
+      find: '@socket.io',
+      replacement: path.resolve(__dirname, 'src/socket.io'),
+    },
+    {
+      find: '@socket.io-client',
+      replacement: path.resolve(__dirname, 'src/socket.io/client'),
+    },
+    {
+      find: '@socket.io-server',
+      replacement: path.resolve(__dirname, 'src/socket.io/server'),
     },
   ],
 };
