@@ -18,6 +18,8 @@
     classes.bg = 'bg-black bg-opacity-10 hover:bg-opacity-20 dark:bg-white dark:bg-opacity-10 dark:hover:bg-opacity-20';
     classes.textColor = 'text-gray-700 dark:text-white';
   }
+
+  $: props = Object.assign($$props, classes);
 </script>
 
-<Button {...classes} on:click><slot/></Button>
+<Button {...props} on:click><slot/></Button>
