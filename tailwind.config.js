@@ -18,6 +18,8 @@ module.exports = {
   },
   variants: {
     extend: {
+      ringColor: ['group-hover'],
+      ringOffsetColor: ['group-hover'],
       ringWidth: ['hover'],
     },
   },
