@@ -2,7 +2,5 @@
 </script>
 
 <svelte:head>
-	<title>Sapper project template</title>
+	<title>Sapper Boilerplate</title>
 </svelte:head>
-
-Home
