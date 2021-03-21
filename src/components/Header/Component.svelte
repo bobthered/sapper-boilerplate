@@ -36,7 +36,7 @@
     </a>
     <div class="flex items-center">
       <Nav {segment} />
-      <Button color="primary" padding="py-4 px-8" on:click={toggleDarkMode}>
+      <Button color="primary" display="hidden md:inline-flex" padding="py-4 px-8" on:click={toggleDarkMode}>
         <svelte:component this={$darkmode ? Moon : Sun} class='w-6 h-6' />
       </Button>
     </div>
