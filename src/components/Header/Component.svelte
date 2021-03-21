@@ -9,6 +9,11 @@
   const toggleDarkMode = e => {
     e.preventDefault();
     $darkmode = !$darkmode;
+    if ( $header.classes.bg === 'bg-white' ) {
+      $header.classes.bg = 'bg-gray-800';
+    } else if ( $header.classes.bg === 'bg-gray-800' ) {
+      $header.classes.bg = 'bg-white';
+    }
   }
 
   // props
