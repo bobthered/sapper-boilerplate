@@ -20,4 +20,4 @@
   }
 </script>
 
-<Button {...classes}><slot/></Button>
+<Button {...classes} on:click><slot/></Button>
