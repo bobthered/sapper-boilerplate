@@ -31,7 +31,7 @@
 			<X />
 		</a>
 	</div>
-	<div class="fixed flex flex-col p-4 w-screen h-screen top-0 left-0 transition duration-200 z-10 bg-white dark:bg-gray-800 {show ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'} md:bg-transparent md:relative md:flex-row md:w-auto md:h-auto md:opacity-100 md:pointer-events-auto">
+	<div class="fixed flex flex-col p-4 w-screen h-screen top-0 left-0 transition duration-200 z-10 bg-white dark:bg-gray-800 {show ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'} md:bg-transparent md:dark:bg-transparent md:relative md:flex-row md:w-auto md:h-auto md:opacity-100 md:pointer-events-auto">
 		{#each items as { text, href, ...item }}
 			<a
 				{href}
