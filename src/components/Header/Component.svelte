@@ -1,6 +1,6 @@
 <script>
   // components
-  import { Component as Button } from '@components/Button';
+  import Button from '@components/Button';
   import { Moon, Sun } from '@bobthered/svelte-heroicons/medium';
   import Logo from '@components/Logo.svelte';
   import Nav from '@components/Nav.svelte';

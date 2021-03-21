@@ -1,6 +1,6 @@
 <script>
 	// components
-	import { Component as Init } from '@components/Init';
+	import Init from '@components/Init';
 </script>
 
 <svelte:head>
