@@ -1,6 +1,6 @@
 <script>
   // components
-  import Button from '@bobthered/svelte-button';
+  import { Component as Button } from '@components/Button';
   import { Moon, Sun } from '@bobthered/svelte-heroicons/medium';
   import Logo from '@components/Logo.svelte';
   import Nav from '@components/Nav.svelte';
@@ -36,7 +36,7 @@
     </a>
     <div class="flex items-center">
       <Nav {segment} />
-      <Button bg="bg-primary-500 hover:bg-transparent" class="hover:ring-2 ring-inset" padding="py-4 px-8" rounded="rounded-full" on:click={toggleDarkMode}>
+      <Button color="primary" padding="py-4 px-8" on:click={toggleDarkMode}>
         <svelte:component this={$darkmode ? Moon : Sun} class='w-6 h-6' />
       </Button>
     </div>
